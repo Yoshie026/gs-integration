@@ -2,33 +2,34 @@ function sendingEmail(e) {
   var formResponse = e.response;
   var itemResponses = formResponse.getItemResponses();
   //iterate through responses
-//--------------------Section 2 Main Detail 
+//--------------------Section 2 Main 
   for (var i=0; i<itemResponses.length; i++) {
     switch (itemResponses[i].getItem().getTitle()) {
-      case "firstQuestion" :
-        var answer = itemResponses[i].getResponse();  // returns a string
+      case "firstQuestion" : //your quiz needs to be exact same  
+        var variables = itemResponses[i].getResponse();  // returns a string
         break; 
-        Logger.log("success_01");
     }
     }  
-mediaQueueFill(answer); 
+mediaQueueFill(); // fill your variables 
+  
 //********** helper functions **********************
 
 
-function mediaQueueFill(answer){
-Logger.log("success_02");
+function mediaQueueFill(variables){
+Logger.log(variables);
 
 
 var email = ['yourTeam@test.com'];  // List of email address 
 
 
-//if(condition === true){
-email.push("whoever@pop.com");
+//if(condition === true){ // simple if statement to add someone to an email chain 
+//email.push("whoever@test.com");
 }
+  
 Logger.log(email);
 
-
-for(var i = 0; i <= format.length; i++){
+*/
+for(var i = 0; i <= variable.length; i++){ // make html templates based on the answer 
 var temps = [i];
 temps[0] = //temp 1;
 
@@ -76,9 +77,9 @@ var weeklySocialPress = {
     hexCode: "#f975b5",
 };
 
-Logger.log("success_04");
-var objs = function(format,onAirPromo,tmp){
-if(answer == "answer1"){
+
+var objs = function(){ //variable match 
+if(condition == true){
 return answer1;
 }};
 
@@ -89,10 +90,10 @@ var selectedObjs=selected[keys];
 
 +  note +"</div>"
 }else if(note === null & packagePull !== null ){
-bottom = "<b>Package Pull</b>: "+ packagePull +"<br>"
+bottom = "<b></b>: "+ packagePull +"<br>"
 }else if(note !== null & packagePull !== null){
-bottom = "<b>Package Pull</b>: "+ packagePull +"<br>" 
-+ "<div><b>Notes</b>: "
+bottom = "<b></b>: "+ packagePull +"<br>" 
++ "<div></b>: "
 + "<br>"+ note +"</div>"
 }else{
 bottom = bottom;
@@ -111,19 +112,19 @@ contact = contact;
 return contact;
 }};
 
-Logger.log("success_05");
-//determining colorcode 
-var colorCode = "<font style=color:" + selected.hexCode +">"
-var baseTemp = //email body here
 
-Logger.log(email);
-var subject = "whatever";
-var msgHtml = baseTemp;
+
+var colorCode = "<font style=color:" + selected.hexCode +">" //determining colorcode 
+*/
+
+var baseTemp = "hola"//email body here
+
+
+var subject = "test"; // subject line here
+var msgHtml = baseTemp; //  context here
 var msgPlain = msgHtml.replace(/\<br\/\>/gi, '\n').replace(/(<([^>]+)>)/ig, ""); // clear html tags and convert br to new lines for plain mail
-Logger.log("success_06");
-MailApp.sendEmail(email, subject, msgPlain,{ htmlBody: msgHtml});
-Logger.log("success_07");
-Logger.log("sent to" + email);
+MailApp.sendEmail(email, subject, msgPlain,{ htmlBody: msgHtml}); // mailapp to send out 
+Logger.log("sent to " + email);
  }
  }
   
