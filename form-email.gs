@@ -31,7 +31,7 @@ var email = ['yourTeam@test.com'];  // List of email address
   
 Logger.log(email);
 
-*/
+/*
 for(var i = 0; i <= variable.length; i++){ // make html templates based on the answer 
 var temps = [i];
 temps[0] = //temp 1;
