@@ -1,8 +1,11 @@
-function sendingEmail(e) { 
+// Sends Emails in multiple formats. Saves Form data to designated platforms.
+
+function sendingEmail(e) { // event 
   var formResponse = e.response;
   var itemResponses = formResponse.getItemResponses();
-  //iterate through responses
-//--------------------Section 2 Main 
+  
+    //iterate through responses
+
   for (var i=0; i<itemResponses.length; i++) {
     switch (itemResponses[i].getItem().getTitle()) {
       case "firstQuestion" : //your quiz needs to be exact same  
