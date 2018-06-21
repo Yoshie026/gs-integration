@@ -12,13 +12,23 @@ function sendingEmail(e) { // event
         var variables = itemResponses[i].getResponse();  // returns a string
         break; 
     }
-    }  
-mediaQueueFill(); // fill your variables 
+    }
+spreadsheet();  
+mail(); // fill your variables 
   
 //********** helper functions **********************
 
+function spreadsheet(){
 
-function mediaQueueFill(variables){
+  var today = new Date();
+  var ss = SpreadsheetApp.openById("") //ss ID
+  var sheet = ss.getSheetByName(""); //sheet name
+  sheet.appendRow([]); // sorts variables in order
+  }
+  
+  
+
+function mail(variables){
 Logger.log(variables);
 
 
@@ -29,7 +39,7 @@ var email = ['yourTeam@test.com'];  // List of email address
 //email.push("whoever@test.com");
 }
   
-Logger.log(email);
+
 
 /*
 for(var i = 0; i <= variable.length; i++){ // make html templates based on the answer 
